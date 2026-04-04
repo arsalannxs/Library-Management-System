@@ -150,9 +150,15 @@ function App() {
             <h3 style={{ margin: '10px 0 5px 0', color: '#64748b' }}>Books Issued</h3>
             <p style={{ margin: 0, fontSize: '24px', fontWeight: 'bold' }}>{issuedCount}</p>
           </div>
-          <button onClick={fetchData} style={{ cursor: 'pointer', border: 'none', background: '#fff', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}>
-            <RefreshCw size={20} /> Refresh
-          </button>
+          
+          {/* NAYA 4TH CARD: Available Copies */}
+          <div style={{ background: '#fff', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', borderLeft: '5px solid #8b5cf6' }}>
+            <CheckCircle size={20} color="#8b5cf6" />
+            <h3 style={{ margin: '10px 0 5px 0', color: '#64748b' }}>Available Copies</h3>
+            <p style={{ margin: 0, fontSize: '24px', fontWeight: 'bold' }}>
+              {books.reduce((total, book) => total + book.AvailableCopies, 0)}
+            </p>
+          </div>
         </div>
       )}
 
